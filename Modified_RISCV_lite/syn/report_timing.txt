@@ -1,0 +1,100 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RISCV_lite' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RISCV_lite
+Version: O-2018.06-SP4
+Date   : Sun Feb 21 22:48:23 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: RST (input port clocked by MY_CLK)
+  Endpoint: Execute/reg0/Zero_out_reg
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RISCV_lite         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 r
+  RST (in)                                                0.00       0.50 r
+  Execute/RST (EX)                                        0.00       0.50 r
+  Execute/U9/ZN (AND2_X2)                                 0.04       0.54 r
+  Execute/FWD/RST (FWD_Unit)                              0.00       0.54 r
+  Execute/FWD/U38/ZN (INV_X1)                             0.03       0.57 f
+  Execute/FWD/U65/ZN (AOI21_X1)                           0.06       0.63 r
+  Execute/FWD/ForwardA[1] (FWD_Unit)                      0.00       0.63 r
+  Execute/FW1/S[1] (mux41_N32_0)                          0.00       0.63 r
+  Execute/FW1/U25/ZN (INV_X1)                             0.03       0.66 f
+  Execute/FW1/U20/ZN (AND2_X1)                            0.05       0.71 f
+  Execute/FW1/U14/Z (BUF_X2)                              0.05       0.76 f
+  Execute/FW1/U29/ZN (AOI22_X1)                           0.07       0.83 r
+  Execute/FW1/U31/ZN (NAND2_X1)                           0.03       0.86 f
+  Execute/FW1/Z[1] (mux41_N32_0)                          0.00       0.86 f
+  Execute/OPSel1/A[1] (mux21_N32_2)                       0.00       0.86 f
+  Execute/OPSel1/U2/Z (MUX2_X2)                           0.07       0.93 f
+  Execute/OPSel1/Z[1] (mux21_N32_2)                       0.00       0.93 f
+  Execute/ALU0/OP1[1] (ALU)                               0.00       0.93 f
+  Execute/ALU0/ABS0/DIN[1] (ABS_Value)                    0.00       0.93 f
+  Execute/ALU0/ABS0/U46/ZN (INV_X1)                       0.04       0.97 r
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/A[1] (ABS_Value_DW01_inc_2)
+                                                          0.00       0.97 r
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/U209/ZN (AND4_X1)
+                                                          0.07       1.04 r
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/U287/ZN (NAND2_X1)
+                                                          0.03       1.08 f
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/U321/ZN (NOR2_X1)
+                                                          0.04       1.12 r
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/U320/Z (CLKBUF_X3)
+                                                          0.05       1.17 r
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/U240/ZN (AND2_X1)
+                                                          0.05       1.22 r
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/U239/Z (XOR2_X1)
+                                                          0.03       1.25 f
+  Execute/ALU0/ABS0/add_0_root_add_22_ni/SUM[21] (ABS_Value_DW01_inc_2)
+                                                          0.00       1.25 f
+  Execute/ALU0/ABS0/U75/ZN (AOI22_X1)                     0.04       1.30 r
+  Execute/ALU0/ABS0/U76/ZN (INV_X1)                       0.02       1.32 f
+  Execute/ALU0/ABS0/DOUT[21] (ABS_Value)                  0.00       1.32 f
+  Execute/ALU0/U342/ZN (AND2_X1)                          0.04       1.35 f
+  Execute/ALU0/U343/ZN (NOR3_X1)                          0.05       1.40 r
+  Execute/ALU0/U498/ZN (AND2_X1)                          0.05       1.45 r
+  Execute/ALU0/U1358/ZN (NAND3_X1)                        0.03       1.49 f
+  Execute/ALU0/U476/ZN (NOR3_X1)                          0.04       1.53 r
+  Execute/ALU0/U246/ZN (AND4_X1)                          0.06       1.59 r
+  Execute/ALU0/U1363/ZN (NAND2_X1)                        0.03       1.62 f
+  Execute/ALU0/U1378/ZN (AOI211_X1)                       0.05       1.66 r
+  Execute/ALU0/ZERO (ALU)                                 0.00       1.66 r
+  Execute/reg0/Zero_in (EX_MEM)                           0.00       1.66 r
+  Execute/reg0/Zero_out_reg/D (DFFR_X2)                   0.01       1.67 r
+  data arrival time                                                  1.67
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.07      -0.07
+  Execute/reg0/Zero_out_reg/CK (DFFR_X2)                  0.00      -0.07 r
+  library setup time                                     -0.04      -0.11
+  data required time                                                -0.11
+  --------------------------------------------------------------------------
+  data required time                                                -0.11
+  data arrival time                                                 -1.67
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.78
+
+
+1

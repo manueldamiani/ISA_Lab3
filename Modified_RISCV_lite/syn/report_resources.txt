@@ -1,0 +1,13 @@
+ 
+****************************************
+Report : resources
+Design : RISCV_lite
+Version: O-2018.06-SP4
+Date   : Sun Feb 21 22:48:22 2021
+****************************************
+
+
+No resource sharing information to report.
+
+No implementations to report
+1

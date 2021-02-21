@@ -1,0 +1,197 @@
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/gtech.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'RISCV_lite'.
+Information: Building the design 'IF_Stage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ID'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'EX'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'MEM'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'WB'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'HazardDetUnit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux21' instantiated from design 'IF_Stage' with
+	the parameters "N=32". (HDL-193)
+Warning:  ../src/Pipeline/Write_Back/mux21.vhd:16: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 14 in file
+	'../src/Pipeline/Write_Back/mux21.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            16            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'PCReg' instantiated from design 'IF_Stage' with
+	the parameters "N=32". (HDL-193)
+
+Inferred memory devices in process
+	in routine PCReg_N32 line 16 in file
+		'../src/Pipeline/Fetch/PCReg.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     PC_out_reg      | Flip-flop |  31   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     PC_out_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'IF_ID'. (HDL-193)
+
+Inferred memory devices in process
+	in routine IF_ID line 17 in file
+		'../src/Pipeline/Fetch/IF_ID.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     INS_OUT_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     PC_OUT_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'CU'. (HDL-193)
+
+Statistics for case statements in always block at line 41 in file
+	'../src/Pipeline/Decode/CU.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            49            |    auto/auto     |
+|            51            |    auto/auto     |
+|            59            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine CU line 41 in file
+		'../src/Pipeline/Decode/CU.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       CW_reg        | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'instruction_type'. (HDL-193)
+
+Statistics for case statements in always block at line 24 in file
+	'../src/Pipeline/Decode/instruction_type.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            33            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'instruction_decomposition'. (HDL-193)
+Warning:  ../src/Pipeline/Decode/instruction_decomposition.vhd:27: Initial values for signals/variables are not supported for synthesis by default. They are ignored. (VHD-7)
+Presto compilation completed successfully.
+Information: Building the design 'regn' instantiated from design 'ID' with
+	the parameters "N=32". (HDL-193)
+
+Inferred memory devices in process
+	in routine regn_N32 line 14 in file
+		'../src/Pipeline/Memory/regn.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      DOUT_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'regn' instantiated from design 'ID' with
+	the parameters "N=5". (HDL-193)
+
+Inferred memory devices in process
+	in routine regn_N5 line 14 in file
+		'../src/Pipeline/Memory/regn.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      DOUT_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'registerfile'. (HDL-193)
+
+Inferred memory devices in process
+	in routine registerfile line 30 in file
+		'../src/Pipeline/Decode/registerfile.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      OUT1_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+|      OUT2_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| registerfile/45  |   32   |   32    |      5       |
+| registerfile/54  |   32   |   32    |      5       |
+======================================================
+Presto compilation completed successfully.
+Information: Building the design 'FWD_Unit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux41' instantiated from design 'EX' with
+	the parameters "N=32". (HDL-193)
+Warning:  ../src/Pipeline/Execute/mux41.vhd:18: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 16 in file
+	'../src/Pipeline/Execute/mux41.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            18            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'ALU'. (HDL-193)
+Warning:  ../src/Pipeline/Execute/ALU.vhd:24: The initial value for signal 'RES' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/Pipeline/Execute/ALU.vhd:25: The initial value for signal 'ABSIN' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+Warning:  ../src/Pipeline/Execute/ALU.vhd:25: The initial value for signal 'ABSOUT' is not supported for synthesis. Presto ignores it.  (ELAB-130)
+
+Statistics for case statements in always block at line 33 in file
+	'../src/Pipeline/Execute/ALU.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            36            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'EX_MEM'. (HDL-193)
+
+Inferred memory devices in process
+	in routine EX_MEM line 34 in file
+		'../src/Pipeline/Execute/EX_MEM.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  MemtoReg_out_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    PCext_out_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    Zero_out_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   ALU_RES_out_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  RF_Data2_OUT_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   ADD_RD_out_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Branch_out_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| Branch_type_out_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  RegWrite_out_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  MemWrite_out_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   MemRead_out_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'DFF'. (HDL-193)
+
+Inferred memory devices in process
+	in routine DFF line 13 in file
+		'../src/Pipeline/Memory/DFF.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ABS_Value'. (HDL-193)
+Presto compilation completed successfully.
+1
