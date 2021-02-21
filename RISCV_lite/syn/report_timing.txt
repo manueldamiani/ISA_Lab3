@@ -1,0 +1,90 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RISCV_lite' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RISCV_lite
+Version: O-2018.06-SP4
+Date   : Sun Feb 21 20:04:20 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: RST (input port clocked by MY_CLK)
+  Endpoint: Execute/reg0/Zero_out_reg
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RISCV_lite         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 r
+  RST (in)                                                0.00       0.50 r
+  Execute/RST (EX)                                        0.00       0.50 r
+  Execute/U8/ZN (AND2_X2)                                 0.04       0.54 r
+  Execute/FWD/RST (FWD_Unit)                              0.00       0.54 r
+  Execute/FWD/U9/ZN (AND2_X1)                             0.05       0.59 r
+  Execute/FWD/ForwardB[1] (FWD_Unit)                      0.00       0.59 r
+  Execute/FW2/S[1] (mux41_N32_2)                          0.00       0.59 r
+  Execute/FW2/U28/ZN (INV_X1)                             0.03       0.62 f
+  Execute/FW2/U15/ZN (AND2_X1)                            0.05       0.66 f
+  Execute/FW2/U20/Z (BUF_X2)                              0.05       0.72 f
+  Execute/FW2/U47/ZN (AOI22_X1)                           0.07       0.78 r
+  Execute/FW2/U49/ZN (NAND2_X1)                           0.03       0.82 f
+  Execute/FW2/Z[6] (mux41_N32_2)                          0.00       0.82 f
+  Execute/OPSel2/A[6] (mux41_N32_1)                       0.00       0.82 f
+  Execute/OPSel2/U2/ZN (AOI21_X1)                         0.05       0.86 r
+  Execute/OPSel2/U3/ZN (INV_X1)                           0.05       0.91 f
+  Execute/OPSel2/Z[6] (mux41_N32_1)                       0.00       0.91 f
+  Execute/ALU0/OP2[6] (ALU)                               0.00       0.91 f
+  Execute/ALU0/add_35/B[6] (ALU_DW01_add_6)               0.00       0.91 f
+  Execute/ALU0/add_35/U679/ZN (NAND2_X1)                  0.05       0.96 r
+  Execute/ALU0/add_35/U549/ZN (OAI21_X1)                  0.03       0.99 f
+  Execute/ALU0/add_35/U693/ZN (AOI21_X1)                  0.05       1.04 r
+  Execute/ALU0/add_35/U691/ZN (OAI21_X1)                  0.03       1.08 f
+  Execute/ALU0/add_35/U441/ZN (INV_X1)                    0.03       1.11 r
+  Execute/ALU0/add_35/U660/ZN (OAI21_X1)                  0.03       1.14 f
+  Execute/ALU0/add_35/U704/ZN (XNOR2_X1)                  0.05       1.19 f
+  Execute/ALU0/add_35/SUM[12] (ALU_DW01_add_6)            0.00       1.19 f
+  Execute/ALU0/U414/ZN (AND2_X1)                          0.04       1.23 f
+  Execute/ALU0/U416/ZN (NOR3_X1)                          0.05       1.27 r
+  Execute/ALU0/U1032/ZN (OAI211_X1)                       0.04       1.31 f
+  Execute/ALU0/U1033/ZN (INV_X1)                          0.03       1.35 r
+  Execute/ALU0/U1316/ZN (OAI211_X1)                       0.04       1.39 f
+  Execute/ALU0/U1317/ZN (AOI21_X1)                        0.05       1.44 r
+  Execute/ALU0/U1318/ZN (NAND4_X1)                        0.04       1.48 f
+  Execute/ALU0/U1319/ZN (AOI211_X1)                       0.08       1.56 r
+  Execute/ALU0/U1320/ZN (NAND3_X1)                        0.04       1.60 f
+  Execute/ALU0/U1337/ZN (AOI211_X1)                       0.05       1.65 r
+  Execute/ALU0/ZERO (ALU)                                 0.00       1.65 r
+  Execute/reg0/Zero_in (EX_MEM)                           0.00       1.65 r
+  Execute/reg0/Zero_out_reg/D (DFFR_X2)                   0.01       1.66 r
+  data arrival time                                                  1.66
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      -0.07      -0.07
+  Execute/reg0/Zero_out_reg/CK (DFFR_X2)                  0.00      -0.07 r
+  library setup time                                     -0.04      -0.11
+  data required time                                                -0.11
+  --------------------------------------------------------------------------
+  data required time                                                -0.11
+  data arrival time                                                 -1.66
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.76
+
+
+1
